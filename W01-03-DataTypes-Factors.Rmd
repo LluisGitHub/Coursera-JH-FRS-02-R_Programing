@@ -1,0 +1,41 @@
+---
+title: "W01-03-DataTypes-Factors"
+author: "Lluis Calvo"
+date: "1/27/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Factors
+
+```{r}
+## We can create a factor vector with function factor and a vector
+x <- factor(c("yes", "yes", "no", "yes", "no"))
+x
+
+## table() function returns frequency of each level
+table(x)
+
+## unclass() returns a copy of its argument with its class attribute removed
+unclass(x)
+
+attr(x,"levels")
+```
+
+
+## Factors
+
+The order of the levels can be set using the levels argument to factor(). This can be important in linear modelling because the first level is used as the baseline level.
+
+For default factors are alphabetically ordered.
+
+```{r}
+
+x <- factor(c("yes", "yes", "no", "yes", "no"), levels = c("yes", "no"))
+
+x
+
+```
