@@ -8,3 +8,11 @@
 ##· Using factors with labels is better than using integers because factors are self-describing; having
 ## a variable that has values “Male” and “Female” is better than a variable that has values 1 and 2.
 
+x <- factor(c("yes", "yes", "no", "yes", "no"))
+x
+
+table(x)
+
+unclass(x)
+
+attr(x,"levels")
