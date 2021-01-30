@@ -1,5 +1,5 @@
 ---
-title: "W01-22-Data Types - Names Attribute"
+title: "W01-22-Data Types - Summary"
 author: "Lluis Calvo"
 date: "1/30/2021"
 output: html_document
