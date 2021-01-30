@@ -1,0 +1,20 @@
+---
+title: "W01-30-Substetting - Matrices"
+author: "Lluis Calvo"
+date: "1/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Substting - Matrices
+
+## Substting a Matrix
+
+```{r}
+
+
+```
+
