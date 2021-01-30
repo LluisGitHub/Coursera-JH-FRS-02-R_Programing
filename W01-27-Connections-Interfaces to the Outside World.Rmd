@@ -1,0 +1,81 @@
+---
+title: "W01-26-Textual Data Formats"
+author: "Lluis Calvo"
+date: "1/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Interfaces to the Outside World
+
+Data are read in using connection interfaces. Connections can be made to files (most common) or to other more exotic things.
+* file, opens a connection to a file  
+* gzfile, opens a connection to a file compressed with gzip  
+* bzfile, opens a connection to a file compressed with bzip2 · url, opens a connection to a webpage  
+
+## File Connections
+
+```{r}
+
+str(file)
+
+```
+
+
+
+* Description is the name of the file
+* Open is a code indicating  
+  - “r”readonly  
+  - “w”writing(andinitializinganewfile)  
+  - “a”appending  
+  - “rb”,“wb”,“ab”reading,writing,orappendinginbinarymode(Windows)  
+
+
+## Connections
+
+In general, connections are powerful tools that let you navigate files or other external objects. In practice, we often don’t need to deal with the connection interface directly.
+
+```{r}
+con <- file("W01-27-foo.txt", "r") 
+data <- read.csv(con) 
+close(con)
+
+head(data)
+```
+
+is the same as
+```{r}
+data <- read.csv("W01-27-foo.txt")
+
+head(data)
+```
+
+## Readling Lines of a Text File
+
+
+```{r}
+con <- gzfile("W01-27.gzfile.tar")
+
+x <- readLines(con, 10)
+
+x
+
+```
+ 
+ 
+## Reading Lines of a Text File
+
+readLines can be useful for reading in lines of webpages
+
+```{r}
+con <- url("http://www.jhsph.edu", "r")
+
+x <- readLines(con)
+
+x
+
+```
+
