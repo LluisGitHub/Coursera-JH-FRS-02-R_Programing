@@ -1,0 +1,70 @@
+---
+title: "W01-32-Substetting - Removing Missing Values"
+author: "Lluis Calvo"
+date: "1/31/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Substting - Removing Missing Values
+
+## Removing NA Values
+
+```{r}
+
+# new vector
+x <- c(1, 2, NA, 4, NA, 5)
+
+# Display vector
+x
+
+# bad <- logical vector from x
+bad <- is.na(x)
+
+# Display bad
+bad
+
+!bad
+
+# Elements of x different of NA
+x[!bad]
+
+```
+
+
+```{r}
+
+# Vector x
+x <- c(1, 2, NA, 4, NA, 6)
+x
+
+# Vector y
+y <- c("a", "b", NA, "d", NA, "f")
+y
+
+# complete.cases(x, y) gives us elements that are not NA in both vectors.
+good <- complete.cases(x, y)
+good
+
+x[good]
+
+y[good]
+
+```
+
+We can remove non complete cases from a data frame
+```{r}
+
+# airquality data frame, first 6 rows
+airquality[1:6, ]
+
+# set good with comple.cases of ariquality data set
+good <- complete.cases(airquality)
+
+# We can now see that all cases are complete
+airquality[good, ][1:6, ]
+```
+
