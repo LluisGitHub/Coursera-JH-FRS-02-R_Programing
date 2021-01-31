@@ -1,0 +1,30 @@
+---
+title: "W01-31-Substetting - Partial Matching"
+author: "Lluis Calvo"
+date: "1/31/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Substting - Partial Matching
+
+Partial matching of names is allowed with [[ and $.
+
+```{r}
+
+x <- list(aardvark = 1:5)
+
+x$a
+
+# By default [[ works with exact match
+# But we can use attribute exact = FALSE
+
+x[["a"]]
+
+x[["a", exact = FALSE]]
+
+```
+
