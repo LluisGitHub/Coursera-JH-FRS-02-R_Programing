@@ -1,0 +1,61 @@
+---
+title: "W01-33-Vectorized Opeartions"
+author: "Lluis Calvo"
+date: "1/31/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Vectorized Operations
+
+## Vectorized Operations
+
+Many operations in R are vectorized making code more efficient, concise, and easier to read.
+
+```{r}
+
+# Vector x
+x <- 1:4
+
+# Vectory y
+y <- 6:9
+
+# Sum verctor x & y
+x +  y
+
+# Logical operations
+x > 2
+
+y == 8
+
+# Product
+x * y
+
+# Division
+x / y
+
+```
+
+```{r}
+
+# Matrices x & y
+x <- matrix(1:4, 2, 2)
+x
+
+y <- matrix(rep(10,4), 2, 2)
+y
+
+# Matrix element-wise multiplication
+x * y
+
+# Matrix division
+x / y
+
+# True matrix multiplication
+x %*% y
+
+```
+
